@@ -103,7 +103,10 @@ public class FbDialog extends Dialog {
                 FbDialog.this.dismiss();
             }
         });
-        Drawable crossDrawable = getContext().getResources().getDrawable(R.drawable.close);
+        int crossDrawableId = getContext().getResources().getIdentifier("facebook_close","drawable",getContext().getPackageName());
+
+        Drawable crossDrawable = getContext().getResources().getDrawable(crossDrawableId);
+//        Drawable crossDrawable = getContext().getResources().getDrawable(R.drawable.close);
         mCrossImage.setImageDrawable(crossDrawable);
         /* 'x' should not be visible while webview is loading
          * make it visible only after webview has fully loaded
